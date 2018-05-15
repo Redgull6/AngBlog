@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/auth.service';
+import { AngularFireStorage } from 'angularfire2/storage';
 import { PostService } from '../post.service';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireStorage } from 'angularfire2/storage';
+
 
 
 @Component({
@@ -12,11 +13,11 @@ import { AngularFireStorage } from 'angularfire2/storage';
 })
 export class PostDashboardComponent implements OnInit {
 
-  title: string
-  image: string
-  content: string
+  title: string;
+  image: string = null;
+  content: string;
 
-  buttonText = "Create Post"
+  buttonText: string = "Create Post"
 
   uploadPercent: Observable<number>
   downloadURL: Observable<string>
@@ -35,7 +36,7 @@ export class PostDashboardComponent implements OnInit {
       author: this.auth.authState.displayName || this.auth.authState.email,
       authorId: this.auth.currentUserId,
       content: this.content,
-      image: this.image || null,
+      image: this.image,
       published: new Date(),
       title: this.title
     };
