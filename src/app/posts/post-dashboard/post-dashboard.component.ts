@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/auth.service';
 import { AngularFireStorage } from 'angularfire2/storage';
+
+
+
 import { PostService } from '../post.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -55,7 +58,6 @@ export class PostDashboardComponent implements OnInit {
       return alert('only image files')
     } else {
       const task = this.storage.upload(path, file)
-      this.downloadURL = task.downloadURL()
       this.uploadPercent = task.percentageChanges()
       console.log('Image Uploaded!')
       this.downloadURL.subscribe(url => this.image = url)

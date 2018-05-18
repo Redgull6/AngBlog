@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
   AngularFirestoreDocument
-} from 'angularfire2/firestore'
-import { Post } from './post'
+} from 'angularfire2/firestore';
+import 'rxjs/add/operator/map';
+import { Post } from './post';
 
 @Injectable()
 export class PostService {
