@@ -18,7 +18,7 @@
     <div [hidden]="editing">
         <mat-card>
             <img src="{{post.image}}" alt="{{post.title}}">
-            <p>Posted by {{post.author}} &bull; {{post.published | date: 'fullDate'}}</p>
+            <p>Posted by {{post.author}} &bull; {{post.published * 1000 | date: 'fullDate'}}</p>
             <mat-card-content>
                 <h2>{{post.title}}</h2>
                 <p>{{post.content}}</p>
