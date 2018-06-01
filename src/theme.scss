@@ -6,6 +6,7 @@ $Ang-blog-app-accent:  mat-palette($mat-red, A200);
 
 $Ang-blog-app-warn:    mat-palette($mat-red);
 
+
 $Ang-blog-app-theme: mat-light-theme($Ang-blog-app-primary, $Ang-blog-app-accent, $Ang-blog-app-warn);
 
 @include angular-material-theme($Ang-blog-app-theme);
