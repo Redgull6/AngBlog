@@ -2,3 +2,7 @@ body {
     margin: 0
     
 }
+.content {
+    background-image: url(https://media.gettyimages.com/photos/medium-golden-brown-wood-texture-background-picture-id513694258?b=1&k=6&m=513694258&s=612x612&w=0&h=z8DULXFx6x_3v6b6gRox4z1iSrm5xrHcEYLxjtRm10o=);
+    height: 750px;
+}
