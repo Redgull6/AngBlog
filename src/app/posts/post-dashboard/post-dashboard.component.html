@@ -16,14 +16,14 @@
         </div>
 
       <mat-form-field>
-        <input matInput placeholder="Post Title" [(ngModel)]="title">
+        <input matInput placeholder="Post Title" [(ngModel)]="title" name="title">
       </mat-form-field>
       <br>
       <mat-form-field>
-        <textarea matInput placeholder="Post Content" [(ngModel)]="content" rows="10"></textarea>
+        <textarea matInput placeholder="Post Content" [(ngModel)]="content" name="content" rows="10"></textarea>
       </mat-form-field>
       <br>
-      <button mat-raised-button color="accent" (click)="createPost()">{{buttonText}}</button>
+      <button mat-raised-button color="accent" (click) = "createPost()" [disabled] = " !title || !content">{{buttonText}}</button>
 
     </mat-expansion-panel>
   </mat-accordion>
