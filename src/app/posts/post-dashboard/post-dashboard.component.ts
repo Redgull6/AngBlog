@@ -19,10 +19,11 @@ export class PostDashboardComponent implements OnInit {
   image: string = null;
   content: string;
 
-  buttonText: string = "Create Post"
+  buttonText: string = "Create Post";
 
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
+   
 
   constructor(
     private auth: AuthService,
@@ -32,7 +33,6 @@ export class PostDashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-
   uploadImage(event) {
     const file = event.target.files[0]
     const path = `posts/${file.name}`
@@ -41,15 +41,15 @@ export class PostDashboardComponent implements OnInit {
       return alert('only image files')
     } else {
       const task = this.storage.upload(path, file)
-      this.uploadPercent = task.percentageChanges()
-      console.log('Image Uploaded!')
+      this.uploadPercent = task.percentageChanges();
       task.snapshotChanges().pipe(
          finalize(() => this.downloadURL = fileRef.getDownloadURL() )
       )
       .subscribe()
+      console.log('Image Uploaded!');
+
     }
   }
-
   createPost() {
     const data = {
       author: this.auth.authState.displayName || this.auth.authState.email,
@@ -59,11 +59,11 @@ export class PostDashboardComponent implements OnInit {
       published: new Date(),
       title: this.title
     };
-    this.postService.create(data)
-    this.title = ''
-    this.content = ''
-    this.image = ''
-    this.buttonText = 'Post Created!'
+    this.postService.create(data);
+    this.title = '';
+    this.content = '';
+    this.image = '';
+    this.buttonText = 'Post Created!';
     setTimeout(() => (this.buttonText = "Create Post"), 3000);
   }
 }

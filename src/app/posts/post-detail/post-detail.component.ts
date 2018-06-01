@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
 
 import { Post } from '../post';
@@ -20,7 +20,7 @@ export class PostDetailComponent implements OnInit {
     private router: Router,
     public auth: AuthService,
     private postService: PostService
-  ) { }
+  ) { };
 
   ngOnInit() {
     this.getPost();

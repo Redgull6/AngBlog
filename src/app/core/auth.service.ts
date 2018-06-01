@@ -6,26 +6,26 @@ import 'firebase/auth';
 @Injectable(
 )
 export class AuthService {
-  authState: any = null
+  authState: any = null;
 
   constructor(public afAuth: AngularFireAuth) {
-    this.afAuth.authState.subscribe(data => this.authState = data)
+    this.afAuth.authState.subscribe(data => this.authState = data);
    }
 
    get authenticated(): boolean {
-     return this.authState !== null
+     return this.authState !== null;
    }
 
    get currentUserId(): string {
-     return this.authenticated ? this.authState.uid : null
+     return this.authenticated ? this.authState.uid : null;
    }
 
   login() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   logout() {
-    this.afAuth.auth.signOut()
+    this.afAuth.auth.signOut();
   }
   
 }

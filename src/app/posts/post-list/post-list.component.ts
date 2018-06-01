@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs/Observable';
 
 import { PostService } from '../post.service';
 import { Post } from '../post';
@@ -17,7 +17,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.postService.getPosts();
-    console.log(this)
+    console.log(this);
   }
 
   delete(id: string) {

@@ -5,12 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AngularFireModule } from 'angularfire2'
 
-import { AngularFirestoreModule } from 'angularfire2/firestore'
-import { AngularFireStorageModule } from 'angularfire2/storage'
-import { AngularFireAuthModule } from 'angularfire2/auth'
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireObject, AngularFireList } from 'angularfire2/database';
 
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
