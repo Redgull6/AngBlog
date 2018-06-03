@@ -40,13 +40,18 @@ export class PostDashboardComponent implements OnInit {
     if (file.type.split('/')[0] !== 'image') {
       return alert('only image files')
     } else {
-      const task = this.storage.upload(path, file)
+      const task = this.storage.upload(path, file);
+      const ref = this.storage.ref(path);
       this.uploadPercent = task.percentageChanges();
+      console.log('Image Uploaded!');
       task.snapshotChanges().pipe(
-         finalize(() => this.downloadURL = fileRef.getDownloadURL() )
+         finalize(() => {
+           this.downloadURL = ref.getDownloadURL()
+           this.downloadURL.subscribe(url => (this.image = url));
+         })
       )
       .subscribe()
-      console.log('Image Uploaded!');
+      
 
     }
   }
